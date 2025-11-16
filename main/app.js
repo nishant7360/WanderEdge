@@ -12,6 +12,7 @@ const AppError = require('./utils/appError.js');
 const globalErrorHandler = require('./controllers/errorController.js');
 const reviewRouter = require('./routes/reviewRoutes.js');
 const viewRouter = require('./routes/viewRoutes.js');
+const compression = require('compression');
 const cookiePareser = require('cookie-parser');
 const bookingRouter = require('./routes/bookingRoutes.js');
 
@@ -93,6 +94,9 @@ app.use((req, res, next) => {
   console.log(req.cookies);
   next();
 });
+
+app.use(compression());
+
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', usersRouter);

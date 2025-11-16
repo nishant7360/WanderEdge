@@ -23,7 +23,7 @@ const postReview = async (rating, review, tourId, userId) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:8000/api/v1/reviews',
+      url: '/api/v1/reviews',
       data: {
         rating,
         review,
