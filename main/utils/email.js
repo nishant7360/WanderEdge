@@ -1,25 +1,27 @@
 const nodemailer = require('nodemailer');
 const pug = require('pug');
 const { htmlToText } = require('html-to-text');
+const sgMail = require('@sendgrid/mail');
 
 module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
     this.firstName = user.name.split(' ')[0];
     this.url = url;
-    this.from = `WanderEdge <${process.env.EMAIL_FROM}>`;
+    this.from = {
+      email: process.env.EMAIL_FROM,
+      name: 'WanderEdge',
+    };
   }
 
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
-      return nodemailer.createTransport({
-        host: 'smtp.sendgrid.net',
-        port: 587,
-        auth: {
-          user: 'apikey',
-          pass: process.env.SENDGRID_API_KEY,
-        },
-      });
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+      return {
+        sendMail: ({ to, from, subject, html, text }) =>
+          sgMail.send({ to, from, subject, html, text }),
+      };
     }
 
     return nodemailer.createTransport({
@@ -54,13 +56,13 @@ module.exports = class Email {
   }
 
   async sendWelcome() {
-    await this.send('welcome', 'Welcome to WanderEdge Familiy!');
+    await this.send('welcome', 'Welcome to WanderEdge Family!');
   }
 
   async sendPasswordReset() {
     await this.send(
       'passwordReset',
-      'Your password reset token valid for 10 min!'
+      'Your password reset token (valid for 10 min)'
     );
   }
 };
