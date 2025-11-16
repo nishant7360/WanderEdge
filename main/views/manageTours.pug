@@ -1,0 +1,28 @@
+extends base  
+
+block content 
+    main.main
+        .user-view
+            // Sidebar Menu
+            nav(class="user-view__menu")
+                ul.side-nav
+                    li.side-nav--active
+                .admin-nav
+                    h5(class="admin-nav__heading") Admin
+                    ul.side-nav
+                        li
+                            a(href="#")
+                                svg
+                                    use(xlink:href="img/icons.svg#icon-plus")
+                                | Create Tour
+                        li
+                            a(href="#")
+                                svg
+                                    use(xlink:href="img/icons.svg#icon-edit")
+                                | Update Tour
+                        li
+                            a(href="#")
+                                svg
+                                    use(xlink:href="img/icons.svg#icon-delete")
+                                | Delete Tour
+                        li        

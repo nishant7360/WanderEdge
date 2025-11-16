@@ -1,0 +1,21 @@
+extends base
+
+block content
+    main.main-signup
+        .signup-form
+            h1.heading-secondary Create new Account
+            form.form.form--signup
+                .form__group
+                    label.form__label(for='name') Name
+                    input#name.form__input(type='text' placeholder='Enter your name' required='')
+                .form__group
+                    label.form__label(for='email') Email
+                    input#email.form__input(type='email' placeholder='example@email.com' required='')
+                .form__group
+                    label.form__label(for='password') Password
+                    input#password.form__input(type='password' placeholder='Enter your password' required='')
+                .form__group
+                    label.form__label(for='confirm password') Confirm Password
+                    input#confirm-password.form__input(type='password' placeholder='Confirm your passwod' required='')
+                .form__group
+                    button.btn.btn--green Register

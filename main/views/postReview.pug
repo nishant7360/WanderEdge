@@ -1,0 +1,17 @@
+extends base
+
+
+block content
+    main.main-review
+        .review-form
+            h1.heading-secondary Create Review
+            form.form--review
+                .form__group
+                    label.form__label(for='name') Rating between 1 and 5
+                    input#rating.form__input(type='number' s='' placeholder='Rating between 1 and 5' required='' min='1' max='5')
+                .form__group
+                    label.form__label(for='text') Review
+                    textarea#review(name='review')
+                input(type="hidden" id="tourId" value=tour._id)
+                input(type="hidden" id="userId" value=user._id)    
+                button.btn.btn--green(type="submit") Submit

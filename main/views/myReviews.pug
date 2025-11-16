@@ -1,0 +1,36 @@
+extends base
+
+block content
+  main.main-reviewCard
+    section.section-reviews
+      h2.heading-secondary.ma-bt-lg Your Reviews
+
+      if reviews.length === 0
+        p.no-data You haven't posted any reviews yet.
+
+      .reviews
+        each review in reviews
+          .reviews__card
+            .tour-image
+              img(src=`/img/tours/${review.tour.imageCover}`, alt=review.tour.name)
+
+            .tour-name
+              p= review.tour.name 
+
+            .rating
+              p Rating
+              .reviews__rating
+                each star in [1, 2, 3, 4, 5]
+                  svg.reviews__star(class=`reviews__star--${review.rating >= star ? 'active' : 'inactive'}`)
+                    use(xlink:href='/img/icons.svg#icon-star')
+
+            .review
+              p= review.review
+
+            .options
+              button.delete-btn(type="button", data-review-id=review._id)
+                i.fa-solid.fa-trash
+              button.edit-btn(type="button", data-review-id=review._id)
+                i.fa-solid.fa-edit
+
+              

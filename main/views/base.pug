@@ -1,0 +1,33 @@
+doctype html 
+html 
+    head 
+        block head  
+            meta(charset='UTF-8') 
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/Favicone.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer")
+            title WanderEdge  | #{title}
+    body 
+        //header
+        include _header
+
+        //content
+        block content   
+            h1 This is a placeholder heading
+
+        //Footer
+        include _footer
+        
+        script(src="https://unpkg.com/axios/dist/axios.min.js")
+        script(type="module" src='/js/login.js')
+        script(type="module" src='/js/updateSettings.js')
+        script(type='module' src='/js/signup.js')
+        script(type='module' src='/js/stripe.js')
+        script(src="https://js.stripe.com/v3/")
+        script(type='module' src='/js/review.js' defer)
+
+
+
+        
