@@ -798,6 +798,11 @@ body {
   padding: 0 8rem;
 }
 
+.no-data {
+  font-size: 30px;
+  align-self: center;
+}
+
 .footer {
   background-color: #f7f7f7;
   padding: 6rem 4rem 3rem 4rem;
