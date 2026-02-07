@@ -418,8 +418,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **Nishant Yadav**
 
 - GitHub: [@nishant7360](https://github.com/nishant7360)
-- Email: nishant.developer@example.com
-- Portfolio: [Your Portfolio URL]
+- Email: nishanty736@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -427,21 +426,3 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - Inspired by modern travel booking platforms
 - Built with guidance from the Node.js and Express communities
 - Special thanks to MongoDB University for database best practices
-
-## 📞 Support
-
-If you have any questions or need help with setup, please:
-
-1. Check the [Issues](https://github.com/nishant7360/WanderEdge/issues) page
-2. Create a new issue if your problem isn't already listed
-3. Reach out via email for urgent matters
-
----
-
-<p align="center">
-  <strong>Built with ❤️ for travelers around the world</strong>
-</p>
-
-<p align="center">
-  Made with Node.js, Express, MongoDB, and a passion for exploration
-</p>
